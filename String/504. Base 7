@@ -1,0 +1,23 @@
+class Solution {
+    public String convertToBase7(int num) {
+        StringBuilder sb=new StringBuilder();
+        boolean f=false;
+        if(num==0){
+            sb.append('0');
+            return sb.toString();
+        }
+        if(num<0){
+            num=Math.abs(num);
+            f=true;
+        }
+        while(num>0){
+            int r=num%7;
+            sb.append(r);
+            num/=7;
+        }
+        if(f==true){
+           sb.append('-');
+        }
+         return sb.reverse().toString();
+    }
+}

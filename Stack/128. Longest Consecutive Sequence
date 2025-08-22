@@ -1,0 +1,22 @@
+class Solution {
+    public int longestConsecutive(int[] arr) {
+        if(arr.length==0) return 0;
+        Arrays.sort(arr);
+        Stack <Integer> st=new Stack<>();
+        int maxlen=1;
+        st.push(arr[0]);
+        for(int i=1;i<arr.length;i++){
+           if(arr[i]==arr[i-1]) continue;
+            if(arr[i]-arr[i-1]==1){
+                st.push(arr[i]);
+            }
+            else{
+               maxlen=Math.max(maxlen,st.size());
+               st.clear();
+               st.push(arr[i]);
+            }
+        }
+        maxlen=Math.max(maxlen,st.size());
+        return maxlen;
+    }
+}

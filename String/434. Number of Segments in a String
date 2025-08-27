@@ -1,0 +1,13 @@
+class Solution {
+    public int countSegments(String s) {
+        int c=0;
+        String s1=s.trim();
+        String arr[]=s1.split("\\s+");
+        if(s1.length()==0){
+            return 0;
+        }
+       
+        return arr.length;
+    
+    }
+}

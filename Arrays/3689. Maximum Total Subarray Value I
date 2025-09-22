@@ -1,0 +1,17 @@
+class Solution {
+    public long maxTotalValue(int[] nums, int k) {
+        int farr[]=nums;
+        int min=Integer.MAX_VALUE;
+        int max=Integer.MIN_VALUE;
+        for(int i=0;i<farr.length;i++){
+            if(farr[i]>max){
+                max=farr[i];
+            }
+            if(farr[i]<min){
+                min=farr[i];
+            }
+        }
+        long d=(long) max - (long) min;
+        return d*k;
+    }
+}
